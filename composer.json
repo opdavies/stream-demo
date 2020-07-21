@@ -12,6 +12,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/opdavies/drupal-module-simple-message"
         }
     ],
     "require": {
@@ -19,6 +23,7 @@
         "drupal/core-composer-scaffold": "^9.0",
         "drupal/core-project-message": "^9.0",
         "drupal/core-recommended": "^9.0",
+        "drupal/simple_message": "^2",
         "drush/drush": "^10.3",
         "vlucas/phpdotenv": "^5.1"
     },

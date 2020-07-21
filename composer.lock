@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "775a5f89776c85816ffb42ffd92024bc",
+    "content-hash": "a7168dc7ca96cd8c0a18d6554a84109e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1687,6 +1687,31 @@
             ],
             "description": "Locked core dependencies; require this project INSTEAD OF drupal/core.",
             "time": "2020-07-08T18:31:41+00:00"
+        },
+        {
+            "name": "drupal/simple_message",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/opdavies/drupal-module-simple-message.git",
+                "reference": "b200b6514bccabce8d3eab6f3be31dacd6b10890"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/opdavies/drupal-module-simple-message/zipball/b200b6514bccabce8d3eab6f3be31dacd6b10890",
+                "reference": "b200b6514bccabce8d3eab6f3be31dacd6b10890",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4"
+            },
+            "type": "drupal-module",
+            "description": "Displays a simple message.",
+            "support": {
+                "source": "https://github.com/opdavies/drupal-module-simple-message/tree/2.0.0",
+                "issues": "https://github.com/opdavies/drupal-module-simple-message/issues"
+            },
+            "time": "2020-07-21T18:09:57+00:00"
         },
         {
             "name": "drush/drush",

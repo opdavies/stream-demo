@@ -11,3 +11,5 @@ $databases['default']['default'] = [
 
 $settings['config_sync_directory'] = '../config/sync';
 $settings['hash_salt'] = env('DRUPAL_SALT');
+
+$config['simple_message.config']['message'] = 'Hello stream!';
