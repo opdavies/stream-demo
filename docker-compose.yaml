@@ -1,0 +1,66 @@
+version: '3.4'
+
+services:
+  nginx:
+    container_name: stream-demo-nginx
+    build:
+      context: .
+      dockerfile: tools/docker/nginx/Dockerfile
+    volumes:
+      - ./web:/srv/app/web
+    depends_on:
+      - mysql
+      - php
+    labels:
+      - "traefik.docker.network=traefik"
+      - "traefik.http.routers.stream-demo.rule=Host(`stream-demo.docker.localhost`)"
+    networks:
+      - traefik
+      - internal
+
+  php:
+    image: stream-demo-php
+    container_name: stream-demo-php
+    build:
+      context: .
+      dockerfile: tools/docker/php/Dockerfile
+    volumes:
+      - .:/srv/app
+    env_file:
+      - .env
+    links:
+      - mysql
+    networks:
+      - internal
+
+  mysql:
+    container_name: stream-demo-mysql
+    image: mariadb:10
+    env_file:
+      - .docker.env
+      - .env
+    volumes:
+      - mysql:/var/lib/mysql
+    networks:
+      - internal
+
+  composer:
+    container_name: stream-demo-composer
+    build:
+      context: .
+      dockerfile: tools/docker/composer/Dockerfile
+    volumes:
+      - .:/app
+      - ~/.composer:/root/.composer
+      - ~/.ssh:/root/.ssh
+    environment:
+      COMPOSER_MEMORY_LIMIT: -1
+
+networks:
+  traefik:
+    external: true
+  internal:
+
+volumes:
+  mysql:
+    driver: local

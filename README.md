@@ -18,3 +18,43 @@ Managing dependencies for a custom project
 - [
 Using Drupal's Composer Scaffold
 ](https://www.drupal.org/docs/develop/using-composer/using-drupals-composer-scaffold)
+
+## Usage
+
+### Starting the project
+
+The project is using Docker and Docker Compose for local development.
+
+Run the `make` command to create the required files, download Drupal core, the additional contrib modules and PHP libraries, and install Drupal.
+
+If you are using [Traefik](https://docs.traefik.io) (recommended), then the site should now be available at <http://stream-demo.docker.localhost>.
+
+### Running Composer commands
+
+Compser commands can be run via the `docker-compose run` command:
+
+```
+docker-compose run --rm composer <command>
+```
+
+For example, to add the Admin Toolbar module:
+
+```
+docker-compose run --rm composer require drupal/admin_toolbar
+```
+
+### Running Drush commands
+
+Drush commands can be run via the `docker-compose run` command:
+
+```
+docker-compose run --rm php vendor/bin/drush <command>
+```
+
+For example, to rebuild the cache:
+
+```
+docker-compose run --rm php vendor/bin/drush cache:rebuild
+```
+
+Alternatively, you could connect to the `php` container using `docker-compose exec php` and run `vendor/bin/drush <command>` within the container.

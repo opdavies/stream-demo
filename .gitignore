@@ -1,9 +1,12 @@
 /*
+!/.dockerignore
+!/.docker.env.example
 !/.env.example
 !/.gitignore
 !/assets/
 !/composer.*
 !/config/
+!/docker-compose.yaml
 !/helpers.php
 !/patches/
 !/README.md
