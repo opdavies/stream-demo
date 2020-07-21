@@ -1,0 +1,14 @@
+diff --git a/web/sites/default/settings.php b/web/sites/default/settings.php
+index c1c97d2..4f93dc3 100755
+--- a/web/sites/default/settings.php
++++ b/web/sites/default/settings.php
+@@ -767,6 +767,6 @@
+  * Keep this code block at the end of this file to take full effect.
+  */
+ #
+-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+-#   include $app_root . '/' . $site_path . '/settings.local.php';
+-# }
++if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
++  include $app_root . '/' . $site_path . '/settings.local.php';
++}

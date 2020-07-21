@@ -1,0 +1,10 @@
+/*
+!/.env.example
+!/.gitignore
+!/assets/
+!/composer.*
+!/config/
+!/helpers.php
+!/patches/
+!/README.md
+!/tools/

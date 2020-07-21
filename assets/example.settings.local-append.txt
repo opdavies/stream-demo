@@ -1,0 +1,13 @@
+$databases['default']['default'] = [
+  'database' => env('MYSQL_DATABASE'),
+  'username' => env('MYSQL_USER'),
+  'password' => env('MYSQL_PASSWORD'),
+  'host' => env('MYSQL_HOSTNAME'),
+  'port' => env('MYSQL_PORT'),
+  'driver' => 'mysql',
+  'prefix' => '',
+  'collation' => 'utf8mb4_general_ci',
+];
+
+$settings['config_sync_directory'] = '../config/sync';
+$settings['hash_salt'] = env('DRUPAL_SALT');
