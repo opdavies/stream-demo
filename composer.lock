@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "40bb47fb90e3e85d94e9739da7cb327f",
+    "content-hash": "43ce8b88977642a290cb6071237e5561",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1790,6 +1790,48 @@
                 "issues": "https://github.com/opdavies/drupal-module-simple-message/issues"
             },
             "time": "2020-07-21T18:09:57+00:00"
+        },
+        {
+            "name": "drupal/tailwindcss",
+            "version": "dev-4.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tailwindcss.git",
+                "reference": "638bdcaff68da42d52ab42c3a223e3db3ab908ca"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "branch-alias": {
+                    "dev-4.x": "4.x-dev"
+                },
+                "drupal": {
+                    "version": "4.x-dev",
+                    "datestamp": "1595364511",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "opdavies",
+                    "homepage": "https://www.drupal.org/user/381388"
+                }
+            ],
+            "description": "A starter kit theme for Drupal 8 and Tailwind CSS.",
+            "homepage": "https://www.drupal.org/project/tailwindcss",
+            "support": {
+                "source": "https://git.drupalcode.org/project/tailwindcss"
+            },
+            "time": "2020-07-21T20:45:59+00:00"
         },
         {
             "name": "drush/drush",
