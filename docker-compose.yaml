@@ -28,6 +28,8 @@ services:
       - .:/srv/app
     env_file:
       - .env
+    environment:
+      - DRUSH_OPTIONS_URI
     links:
       - mysql
     networks:

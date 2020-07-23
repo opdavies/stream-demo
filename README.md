@@ -23,38 +23,32 @@ Using Drupal's Composer Scaffold
 
 ### Starting the project
 
-The project is using Docker and Docker Compose for local development.
+The project is using Docker, Docker Compose and [Workspace](https://github.com/my127/workspace) for local development.
 
-Run the `make` command to create the required files, download Drupal core, the additional contrib modules and PHP libraries, and install Drupal.
+Once Workspace is installed, run `ws install` to create the required files, download Drupal core, the additional contrib modules and PHP libraries, and install Drupal.
 
 If you are using [Traefik](https://docs.traefik.io) (recommended), then the site should now be available at <http://stream-demo.docker.localhost>.
 
 ### Running Composer commands
 
-Compser commands can be run via the `docker-compose run` command:
+Compser commands can be run via the `ws composer` command:
 
 ```
-docker-compose run --rm composer <command>
+ws composer <command>
 ```
 
 For example, to add the Admin Toolbar module:
 
 ```
-docker-compose run --rm composer require drupal/admin_toolbar
+ws composer require drupal/admin_toolbar
 ```
 
 ### Running Drush commands
 
-Drush commands can be run via the `docker-compose run` command:
+Drush commands can be run via the `ws drush` command. For example, to rebuild the cache:
 
 ```
-docker-compose run --rm php vendor/bin/drush <command>
+ws drush cache:rebuild
 ```
 
-For example, to rebuild the cache:
-
-```
-docker-compose run --rm php vendor/bin/drush cache:rebuild
-```
-
-Alternatively, you could connect to the `php` container using `docker-compose exec php` and run `vendor/bin/drush <command>` within the container.
+Alternatively, you could connect to the `php` container using `ws console` and run `vendor/bin/drush <command>` within the container.

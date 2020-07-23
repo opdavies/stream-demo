@@ -1,0 +1,41 @@
+command('composer %'): |
+  #!bash|=
+  passthru "docker-compose run --rm composer ={ input.argument('%') }"
+
+command('console'): |
+  #!bash
+  passthru "docker-compose run --rm php bash"
+
+command('disable'): |
+  #!bash
+  run "docker-compose down --remove-orphans"
+
+command('destroy'): |
+  #!bash
+  run "docker-compose down --remove-orphans -v"
+
+command('drush %'):
+  env:
+    DRUSH_OPTIONS_URI: = @('app.url')
+  exec: |
+    #!bash|=
+    passthru "docker-compose run --rm php vendor/bin/drush ={ input.argument('%') }"
+
+command('enable'): |
+  #!bash
+  run "docker-compose up -d"
+
+command('install'): |
+  #!bash|@
+  run "cp .docker.env.example .docker.env"
+  run "cp .env.example .env"
+  run "ws composer validate"
+  run "ws composer install"
+  run "ws enable"
+  run "ws drush site:install -y --existing-config --account-pass=@('admin.password')"
+
+attributes:
+  admin:
+    password: secret
+  app:
+    url: http://stream-demo.docker.localhost
