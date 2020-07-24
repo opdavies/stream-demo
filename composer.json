@@ -24,6 +24,7 @@
         "drupal/core-composer-scaffold": "^9.0",
         "drupal/core-project-message": "^9.0",
         "drupal/core-recommended": "^9.0",
+        "drupal/paragraphs": "^1.12",
         "drupal/simple_message": "^2",
         "drupal/tailwindcss": "^4",
         "drush/drush": "^10.3",

@@ -1,0 +1,30 @@
+uuid: 7d8969e7-43da-4e26-bc79-0638cef367d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.person.field_job_title
+    - field.field.paragraph.person.field_name
+    - paragraphs.paragraphs_type.person
+id: paragraph.person.default
+targetEntityType: paragraph
+bundle: person
+mode: default
+content:
+  field_job_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_name:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }
